@@ -1,9 +1,8 @@
-import './App.css';
-import { UsuarioController } from './components/Usuario';
+import { AppRouter } from './router/AppRouter';
 
 function App() {
   return (
-    <UsuarioController />
+    <AppRouter />
   );
 }
 
