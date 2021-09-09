@@ -1,68 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import FolderIcon from '@material-ui/icons/Folder';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { Link } from 'react-router-dom';
-import { Button, createTheme, ThemeProvider } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
+import { Add, Group, Home, Settings } from '@material-ui/icons';
 
 
 const useStyles = makeStyles({
     root: {
-        width: 500,
+        width: '100%',
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        backgroundColor: "#2d313a",
+        zIndex: 100,
     },
 });
 
 export const Navigation = () => {
     const clases = useStyles();
-    const [value, setValue] = React.useState('recents');
+    const [value, setValue] = useState(0);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+    const history = useHistory();
+    
+    useEffect(() => {
+        if (value === 0) history.push("/");
+        else if (value === 1) {
+            history.push("/list")
+            setValue(5) //Para evitar el error de que cuando se toque en editar no se pueda volver al listado
+        }
+        else if (value === 2) history.push("/add");
+        else if (value === 3) history.push("/settings");
 
-    const theme = createTheme({
-        palette: {
-            secondary: {
-                main: '#aed581',
-            },
-        },
-    });
+    }, [value, history])
 
     return (
-        <div>
-            <BottomNavigation value={value} onChange={handleChange} className={clases.root}>
-                <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
-                <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
-                <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
-                <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
-            </BottomNavigation>
-
-            <div style={{ float: 'right' }}>
-                <Link to="/add">
-                    Añadir
-                </Link>
-
-                <Link to="/list">
-                    Listado
-                </Link>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <ThemeProvider theme={theme}>
-                    <Button variant="contained" color='secondary' href="/add">
-                        Añadir
-                    </Button>
-                    &nbsp; &nbsp; &nbsp; &nbsp;
-                    <Button variant="contained" color="secondary" href="/add">
-                        Listado
-                    </Button>
-
-                </ThemeProvider>
-
-            </div>
-
-        </div>
+        <BottomNavigation
+            value={value}
+            onChange={(event, newValue) => {
+                setValue(newValue);
+            }}
+            showLabels
+            className={clases.root}
+        >
+            <BottomNavigationAction style={{ color: 'white' }} label="Inicio" icon={<Home />} />
+            <BottomNavigationAction style={{ color: 'white' }} label="Listado" icon={<Group />} />
+            <BottomNavigationAction style={{ color: 'white' }} label="Añadir" icon={<Add />} />
+            <BottomNavigationAction style={{ color: 'white' }} label="Configuración" icon={<Settings />} />
+        </BottomNavigation>
     );
 }

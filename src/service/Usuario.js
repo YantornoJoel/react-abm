@@ -64,3 +64,34 @@ export const save = async (id, nombre, apellido, direccion, telefono) => {
 
     return resp
 }
+
+
+export const deleteUser = async (id) => {
+
+    const resp = await axios.get(`${url}delete/${id}`, {
+
+        id: id
+
+    })
+        .then((resp) => {
+            return resp;
+        })
+        .catch((err) => {
+            Swal.fire({
+                title: 'Error',
+                text: 'Error al eliminar el usuario',
+                icon: 'error',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                },
+                timer: 4000
+            })
+            return err
+        })
+
+    return resp
+
+}
