@@ -43,7 +43,7 @@ export const UpdateUserStyled = () => {
     return (
 
         <Container fixed>
-            <h1 style={{ textAlign: 'center' }}>Agregar usuario</h1>
+            <h1 style={{ textAlign: 'center' }}>Editar usuario</h1>
 
             <form onSubmit={onSubmit}>
 

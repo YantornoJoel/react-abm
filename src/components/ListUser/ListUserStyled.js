@@ -124,7 +124,7 @@ export const ListUserContainer = ({ usuario }) => {
                                                         )
                                                         deleteUserId(usuario.id)
                                                         setTimeout(() => {
-                                                            history.push("/");
+                                                            history.push("/settings");
                                                         }, 1000);
                                                     }
                                                 })
