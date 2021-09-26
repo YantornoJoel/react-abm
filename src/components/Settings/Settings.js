@@ -8,7 +8,7 @@ export const Settings = () => {
         <div>
 
             <div id="carouselExampleInterval" class="carousel slide"
-                data-bs-ride="carousel"
+                data-bs-ride="carousel" 
             >
                 <div class="carousel-inner">
                     <div class="carousel-item active"
