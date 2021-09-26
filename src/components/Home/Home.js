@@ -22,6 +22,9 @@ const useStyles = makeStyles({
     cardMedia: {
         width: 200,
     },
+
+  
+
 });
 
 export const Home = () => {
@@ -30,86 +33,32 @@ export const Home = () => {
 
     return (
         <Grid item xs={8} md={4}>
-            <CardActionArea component="a" href="#">
-                <Card className={classes.card}>
-                    <div className={classes.cardDetails}>
-                        <CardContent>
-                            <Typography component="h2" variant="h5">
-                                Programación
-                            </Typography>
-                            <Typography variant="subtitle1" color="textSecondary">
-                                JavaScript
-                            </Typography>
-                            <Typography variant="subtitle1" paragraph>
-                                Detalles del lenguaje javascript y todos sus frameworks y librerias.
-                            </Typography>
-                            <Typography variant="subtitle1" color="primary">
-                                Seguir leyendo...
-                            </Typography>
-                        </CardContent>
-                        <Code />
-                        <SupervisorAccount />
-                        <LaptopChromebook />
-                    </div>
-                    <Hidden xsDown>
-                        <CardMedia className={classes.cardMedia} image="https://res.cloudinary.com/keystone-demo/image/upload/v1565132003/rkgxw5iilsk8ntejn3ei.jpg" title="Dev" />
-                    </Hidden>
-                </Card>
-            </CardActionArea>
-            &nbsp;
-            <CardActionArea component="a" href="#">
-                <Card className={classes.card}>
-                    <div className={classes.cardDetails}>
-                        <CardContent>
-                            <Typography component="h2" variant="h5">
-                                Programación
-                            </Typography>
-                            <Typography variant="subtitle1" color="textSecondary">
-                                JavaScript
-                            </Typography>
-                            <Typography variant="subtitle1" paragraph>
-                                Detalles del lenguaje javascript y todos sus frameworks y librerias.
-                            </Typography>
-                            <Typography variant="subtitle1" color="primary">
-                                Seguir leyendo...
-                            </Typography>
-                        </CardContent>
-                        <Code />
-                        <SupervisorAccount />
-                        <LaptopChromebook />
-                    </div>
-                    <Hidden xsDown>
-                        <CardMedia className={classes.cardMedia} image="https://media.geeksforgeeks.org/wp-content/uploads/20190906180444/How-to-Become-a-JavaScript-Developer.png" title="Dev" />
-                    </Hidden>
-                </Card>
-            </CardActionArea>
-&nbsp;
-            <CardActionArea component="a" href="#">
-                <Card className={classes.card}>
-                    <div className={classes.cardDetails}>
-                        <CardContent>
-                            <Typography component="h2" variant="h5">
-                                Programación
-                            </Typography>
-                            <Typography variant="subtitle1" color="textSecondary">
-                                JavaScript
-                            </Typography>
-                            <Typography variant="subtitle1" paragraph>
-                                Detalles del lenguaje javascript y todos sus frameworks y librerias.
-                            </Typography>
-                            <Typography variant="subtitle1" color="primary">
-                                Seguir leyendo...
-                            </Typography>
-                        </CardContent>
-                        <Code />
-                        <SupervisorAccount />
-                        <LaptopChromebook />
-                    </div>
-                    <Hidden xsDown>
-                        <CardMedia className={classes.cardMedia} image="https://miro.medium.com/max/480/0*6lPHg32SjsdpRNZN.png" title="Dev" />
-                    </Hidden>
-                </Card>
-            </CardActionArea>
+
+<div>
+
+<img src="https://c.wallhere.com/photos/11/56/nature_landscape-1945785.jpg!d"  width="1920" height="1080"/>
+  
+ 
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+
+    </div>
+
+
+  
+  
+
+
+
+
+
+           
+
+            
         </Grid>
     );
 }
