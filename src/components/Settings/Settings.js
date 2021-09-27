@@ -5,7 +5,21 @@ import './Settings.css'
 
 export const Settings = () => {
     return (
-        <div>
+        <div class="container px-4 px-lg-5">
+            <div class="row">
+
+           
+                        
+                        
+
+                        <h1 class="display-1 text-center" >Proyecto</h1>
+
+                        <h1 class="display-3  text-center">Programación 6</h1>
+                        <h1 class="display-8  text-center">Java + React + Node JS + Spring Boot + MongoDB = API RestFull</h1>
+                        
+                    </div>
+
+                    
 
             <div id="carouselExampleInterval" class="carousel slide"
                 data-bs-ride="carousel" 
@@ -26,6 +40,24 @@ export const Settings = () => {
                     >
                         <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PHvvmnw8--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/91ovedmu4grqhjh434rq.png" class="d-block w-100" alt="..." style={{ minHeight: '500px', maxHeight: '500px' }} />
                     </div>
+                    <div class="carousel-item"
+                        data-bs-interval="2000"
+                    >
+                        <img src="https://www.muylinux.com/wp-content/uploads/2019/01/mongodb.png" class="d-block w-100" alt="..." style={{ minHeight: '500px', maxHeight: '500px' }} />
+                    </div>
+                    <div class="carousel-item"
+                        data-bs-interval="2000"
+                    >
+                        <img src="https://ubunlog.com/wp-content/uploads/2014/03/logo-java-830x460.jpg.webp" class="d-block w-100" alt="..." style={{ minHeight: '500px', maxHeight: '500px' }} />
+                    </div>
+                    <div class="carousel-item"
+                        data-bs-interval="2000"
+                    >
+                        <img src="https://www.ma-no.org/cache/galleries/contents-1774/960-400/restful-api-impjpg.webp" class="d-block w-100" alt="..." style={{ minHeight: '500px', maxHeight: '500px' }} />
+                    </div>
+
+
+                    
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -36,6 +68,7 @@ export const Settings = () => {
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+             
 
 
             <section class="features-icons bg-light text-center">
@@ -76,7 +109,7 @@ export const Settings = () => {
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="team-member">
-                                <img class="mx-auto rounded-circle" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" alt="..." />
+                                <img class="mx-auto rounded-circle" src="https://media-exp1.licdn.com/dms/image/C5603AQGMcgJ40UZIXw/profile-displayphoto-shrink_800_800/0/1607982978177?e=1637798400&v=beta&t=J9wB3Dhd3TVgh4xrvWz-DBnYUJu4jY_CulR984YcnQQ" alt="..." />
                                 <h4>Luis Gerez</h4>
                                 <p class="text-muted">Desarrollador</p>
                                 <a class="btn btn-dark btn-social mx-2" href="#!"><Facebook /></a>
@@ -86,9 +119,9 @@ export const Settings = () => {
                         </div>
                         <div class="col-lg-4">
                             <div class="team-member">
-                                <img class="mx-auto rounded-circle" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" alt="..." />
+                                <img class="mx-auto rounded-circle" src="https://media-exp1.licdn.com/dms/image/C5603AQHP03FraKMszA/profile-displayphoto-shrink_800_800/0/1625238459613?e=1637798400&v=beta&t=RjxTXY2r9grexn4GCl00x8oPRYfgpEVhMdUG_XisB6w" alt="..." />
                                 <h4>Patricio Ruiz</h4>
-                                <p class="text-muted">Desarrolladorr</p>
+                                <p class="text-muted">Desarrollador</p>
                                 <a class="btn btn-dark btn-social mx-2" href="#!"><Facebook /></a>
                                 <a class="btn btn-dark btn-social mx-2" href="#!"><Twitter /></a>
                                 <a class="btn btn-dark btn-social mx-2" href="#!"><LinkedIn /></a>
@@ -96,7 +129,7 @@ export const Settings = () => {
                         </div>
                         <div class="col-lg-4">
                             <div class="team-member">
-                                <img class="mx-auto rounded-circle" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" alt="..." />
+                                <img class="mx-auto rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQHKE43yN3Sb9w/profile-displayphoto-shrink_800_800/0/1621873813101?e=1637798400&v=beta&t=4Fir9njx6a4rBd_y-wq0fsNGd8czIIcYatZgCgS78kM" alt="..." />
                                 <h4>Joel Yantorno</h4>
                                 <p class="text-muted">Desarrollador</p>
                                 <a class="btn btn-dark btn-social mx-2" href="#!"><Facebook /></a>
@@ -105,9 +138,7 @@ export const Settings = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. Cipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quo ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritati.</p></div>
-                    </div>
+                    
                 </div>
             </section>
         </div>
