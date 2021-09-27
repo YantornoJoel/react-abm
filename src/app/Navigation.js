@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import { useHistory } from 'react-router-dom';
-import { Add, Group, Home, Settings } from '@material-ui/icons';
+import { Add, Group, Home, Settings, LockOpen } from '@material-ui/icons';
 
 
 const useStyles = makeStyles({
@@ -22,7 +22,7 @@ export const Navigation = () => {
     const [value, setValue] = useState(0);
 
     const history = useHistory();
-    
+
     useEffect(() => {
         if (value === 0) history.push("/");
         else if (value === 1) {
@@ -31,6 +31,7 @@ export const Navigation = () => {
         }
         else if (value === 2) history.push("/add");
         else if (value === 3) history.push("/settings");
+        else if (value === 4) history.push("/login")
 
     }, [value, history])
 
@@ -47,6 +48,7 @@ export const Navigation = () => {
             <BottomNavigationAction style={{ color: 'white' }} label="Listado" icon={<Group />} />
             <BottomNavigationAction style={{ color: 'white' }} label="Añadir" icon={<Add />} />
             <BottomNavigationAction style={{ color: 'white' }} label="Configuración" icon={<Settings />} />
+            <BottomNavigationAction style={{ color: 'white' }} label="Login" icon={<LockOpen />} />
         </BottomNavigation>
     );
 }

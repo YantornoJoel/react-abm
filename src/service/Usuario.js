@@ -95,3 +95,42 @@ export const deleteUser = async (id) => {
     return resp
 
 }
+
+
+export const login = async (name) => {
+    const resp = await axios.post(`${url}login`, {
+        nombre: name
+    })
+        .then((resp) => {
+            Swal.fire({
+                title: 'Enviado',
+                text: 'Usuario creado correctamente',
+                icon: 'success',
+                showClass: {
+                    popup: 'animate_animated animate_fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate_animated animate_fadeOutUp'
+                },
+                timer: 3000
+            })
+            return resp;
+        })
+        .catch((err) => {
+            Swal.fire({
+                title: 'Error',
+                text: 'Ingrese todos los datos correctamente',
+                icon: 'error',
+                showClass: {
+                    popup: 'animate_animated animate_fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate_animated animate_fadeOutUp'
+                },
+                timer: 4000
+            })
+            return err
+        })
+    console.log(resp);
+    return resp
+}
