@@ -150,7 +150,7 @@ export const Home = () => {
                         </div>
                         <div className="col-lg-4">
                             <div className="team-member">
-                                <img className="mx-auto rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQHKE43yN3Sb9w/profile-displayphoto-shrink_800_800/0/1621873813101?e=1637798400&v=beta&t=4Fir9njx6a4rBd_y-wq0fsNGd8czIIcYatZgCgS78kM" alt="..." />
+                                <img className="mx-auto rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQG8iHle61I6nQ/profile-displayphoto-shrink_200_200/0/1634744635036?e=1640217600&v=beta&t=NcSiaTIH3CS7E-ClphkF3v7EH8dYuqeqkroYiChb-hE" alt="..." />
                                 <h4>Joel Yantorno</h4>
                                 <p className="text-white">Desarrollador</p>
                                 <a className="btn btn-dark btn-social mx-2 rounded-circle" href="#!"><Facebook /></a>
