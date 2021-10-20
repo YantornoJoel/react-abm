@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import Swal from 'sweetalert2';
 
-const url = 'http://localhost:8080/user/';
+const url = 'http://localhost:8080/pelicula/';
 
 export const getAll = async () => {
 
@@ -20,21 +20,21 @@ export const findID = async (id) => {
 }
 
 
-export const save = async (id, nombre, apellido, direccion, telefono) => {
+export const save = async (id, nombre, categoria, creador, año) => {
 
     const resp = await axios.post(`${url}save`, {
 
         id: id,
         nombre: nombre,
-        apellido: apellido,
-        direccion: direccion,
-        telefono: telefono
+        categoria: categoria,
+        creador: creador,
+        año: año
 
     })
         .then((resp) => {
             Swal.fire({
                 title: 'Enviado',
-                text: 'Usuario creado correctamente',
+                text: 'Pelicula creada correctamente',
                 icon: 'success',
                 showClass: {
                     popup: 'animate__animated animate__fadeInDown'
@@ -66,7 +66,7 @@ export const save = async (id, nombre, apellido, direccion, telefono) => {
 }
 
 
-export const deleteUser = async (id) => {
+export const deletePelicula = async (id) => {
 
     const resp = await axios.get(`${url}delete/${id}`, {
 
@@ -79,7 +79,7 @@ export const deleteUser = async (id) => {
         .catch((err) => {
             Swal.fire({
                 title: 'Error',
-                text: 'Error al eliminar el usuario',
+                text: 'Error al eliminar pelicula',
                 icon: 'error',
                 showClass: {
                     popup: 'animate__animated animate__fadeInDown'
@@ -94,43 +94,4 @@ export const deleteUser = async (id) => {
 
     return resp
 
-}
-
-
-export const login = async (name) => {
-    const resp = await axios.post(`${url}login`, {
-        nombre: name
-    })
-        .then((resp) => {
-            Swal.fire({
-                title: 'Enviado',
-                text: 'Usuario creado correctamente',
-                icon: 'success',
-                showClass: {
-                    popup: 'animate_animated animate_fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate_animated animate_fadeOutUp'
-                },
-                timer: 3000
-            })
-            return resp;
-        })
-        .catch((err) => {
-            Swal.fire({
-                title: 'Error',
-                text: 'Ingrese todos los datos correctamente',
-                icon: 'error',
-                showClass: {
-                    popup: 'animate_animated animate_fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate_animated animate_fadeOutUp'
-                },
-                timer: 4000
-            })
-            return err
-        })
-    console.log(resp);
-    return resp
 }

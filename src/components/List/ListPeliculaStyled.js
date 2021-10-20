@@ -10,7 +10,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Button, Container } from '@material-ui/core';
-import { deleteUser } from '../../service/Usuario';
+import { deletePelicula } from '../../service/Pelicula';
 
 
 import Swal from 'sweetalert2';
@@ -59,11 +59,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const deleteUserId = async (id) => {
-    await deleteUser(id)
+const deletePeliculaId = async (id) => {
+    await deletePelicula(id)
 }
 
-export const ListUserContainer = ({ usuario }) => {
+export const ListPeliculaContainer = ({ pelicula }) => {
 
     const history = useHistory();
 
@@ -77,37 +77,37 @@ export const ListUserContainer = ({ usuario }) => {
                     <TableHead>
                         <TableRow>
                             <StyledTableCell className={clases.tableHeaderCell} align="center">Nombre</StyledTableCell>
-                            <StyledTableCell className={clases.tableHeaderCell} align="center">Apellido</StyledTableCell>
-                            <StyledTableCell className={clases.tableHeaderCell} align="center">Dirección</StyledTableCell>
-                            <StyledTableCell className={clases.tableHeaderCell} align="center">Teléfono</StyledTableCell>
+                            <StyledTableCell className={clases.tableHeaderCell} align="center">Categoria</StyledTableCell>
+                            <StyledTableCell className={clases.tableHeaderCell} align="center">Creador</StyledTableCell>
+                            <StyledTableCell className={clases.tableHeaderCell} align="center">Año</StyledTableCell>
                             <StyledTableCell className={clases.tableHeaderCell} align="center">Id</StyledTableCell>
                             <StyledTableCell className={clases.tableHeaderCell} align="center">Acciones</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {usuario.map((usuario) => (
-                            <StyledTableRow key={usuario.id}>
+                        {pelicula.map((pelicula) => (
+                            <StyledTableRow key={pelicula.id}>
                                 <StyledTableCell component="th" scope="row" className={clases.name}>
-                                    {usuario.nombre}
+                                    {pelicula.nombre}
                                 </StyledTableCell>
-                                <StyledTableCell align="center">{usuario.apellido}</StyledTableCell>
-                                <StyledTableCell align="center">{usuario.direccion}</StyledTableCell>
-                                <StyledTableCell align="center">{usuario.telefono}</StyledTableCell>
-                                <StyledTableCell align="center">{usuario.id}</StyledTableCell>
+                                <StyledTableCell align="center">{pelicula.categoria}</StyledTableCell>
+                                <StyledTableCell align="center">{pelicula.creador}</StyledTableCell>
+                                <StyledTableCell align="center">{pelicula.año}</StyledTableCell>
+                                <StyledTableCell align="center">{pelicula.id}</StyledTableCell>
                                 <StyledTableCell align="center">
                                     <Edit
                                         onClick={() => {
-                                            localStorage.setItem('idUser', usuario.id)
-                                            history.push("/update")
+                                            localStorage.setItem('idPelicula', pelicula.id)
+                                            history.push("/pelicula/update")
                                         }}
                                     />
                                     <Delete
                                         // style={{ paddingLeft: 15, color: 'red' }}
-                                        style={{marginLeft: 15, color: 'red'}}
+                                        style={{ marginLeft: 15, color: 'red' }}
                                         onClick={() => {
                                             Swal.fire({
-                                                title: 'Eliminar usuario',
-                                                text: `¿Seguro que desea eliminar al usuario ${usuario.nombre}?`,
+                                                title: 'Eliminar pelicula',
+                                                text: `¿Seguro que desea eliminar la pelicula ${pelicula.nombre}?`,
                                                 icon: 'warning',
                                                 showCancelButton: true,
                                                 confirmButtonColor: '#3085d6',
@@ -119,10 +119,10 @@ export const ListUserContainer = ({ usuario }) => {
                                                     if (result.isConfirmed) {
                                                         Swal.fire(
                                                             'Borrado',
-                                                            `El usuario ${usuario.nombre} ${usuario.apellido} ha sido borrado correctamente.`,
+                                                            `La pelicula ${pelicula.nombre} ha sido borrado correctamente.`,
                                                             'success'
                                                         )
-                                                        deleteUserId(usuario.id)
+                                                        deletePeliculaId(pelicula.id)
                                                         setTimeout(() => {
                                                             history.push("/settings");
                                                         }, 1000);
@@ -138,10 +138,10 @@ export const ListUserContainer = ({ usuario }) => {
             </TableContainer>
             <Button variant="contained" color="primary" className={clases.button}
                 onClick={() => {
-                    history.push("/add")
+                    history.push("/pelicula/add")
                 }}
             >
-                Añadir usuario
+                Añadir pelicula
             </Button>
         </Container>
 

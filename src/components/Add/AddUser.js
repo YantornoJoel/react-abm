@@ -6,7 +6,8 @@ import { AddUserStyled } from './AddUserStyled';
 export const AddUser = () => {
 
     return (
-
-        <AddUserStyled />
+        <>
+            <AddUserStyled />
+        </>
     )
 }
