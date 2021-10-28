@@ -25,7 +25,7 @@ export const AddUserStyled = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         setTimeout(() => {
-            history.push("/list")
+            history.push("/user/list")
 
         }, 2000);
         save(id, nombre, apellido, direccion, telefono)
@@ -47,9 +47,9 @@ export const AddUserStyled = () => {
 
     return (
         <Container fixed className="mt-5">
-            <Card variant="outlined" style={{background: 'white'}}>
+            <Card variant="outlined" style={{ background: 'white' }}>
 
-                <h1 style={{ textAlign: 'center' }} className="mb-4 mt-3">Agregar usuario</h1>
+                <h1 style={{ textAlign: 'center' }} className="mb-4 mt-3">AGREGAR USUARIO</h1>
 
                 <form onSubmit={onSubmit}>
 

@@ -2,7 +2,9 @@ import axios from 'axios';
 
 import Swal from 'sweetalert2';
 
-const url = 'http://localhost:8090/persona/api/v1/';
+
+const url = 'http://localhost:8080/user/';
+
 
 export const getAll = async () => {
 

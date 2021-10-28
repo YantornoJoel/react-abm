@@ -13,12 +13,13 @@ export const ListUser = () => {
     }
 
     useEffect(() => {
-
         listUser();
     }, []);
 
 
     return (
-        <ListUserContainer usuario={usuario} key={usuario.id} />
+        <>
+            <ListUserContainer usuario={usuario} key={usuario.id} />
+        </>
     )
 }
