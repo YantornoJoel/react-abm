@@ -2,12 +2,14 @@ import axios from 'axios';
 
 import Swal from 'sweetalert2';
 
+
 const url = 'http://localhost:8080/user/';
+
 
 export const getAll = async () => {
 
-    const resp = await axios.get(url + 'all');
-
+    const resp = await axios.get(url + 'all')
+    
     return resp;
 };
 
@@ -95,42 +97,57 @@ export const deleteUser = async (id) => {
     return resp
 
 }
-
+const GetEquality = async()=>{
+    const findUser = await getAll()
+    let dataUser =  findUser.data
+    console.log(dataUser)
+    for (let index = 0; index <= dataUser.length; index++) {
+        let nameUserDb = dataUser[index].nombre;
+        return nameUserDb
+    }
+}
 
 export const login = async (name) => {
-    const resp = await axios.post(`${url}login`, {
-        nombre: name
-    })
-        .then((resp) => {
-            Swal.fire({
-                title: 'Enviado',
-                text: 'Usuario creado correctamente',
-                icon: 'success',
-                showClass: {
-                    popup: 'animate_animated animate_fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate_animated animate_fadeOutUp'
-                },
-                timer: 3000
-            })
-            return resp;
+
+    const result = await GetEquality();
+    if(result === name){
+        const resp = await axios.post(`${url}login`, {
+            nombre: name
         })
-        .catch((err) => {
-            Swal.fire({
-                title: 'Error',
-                text: 'Ingrese todos los datos correctamente',
-                icon: 'error',
-                showClass: {
-                    popup: 'animate_animated animate_fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate_animated animate_fadeOutUp'
-                },
-                timer: 4000
+            .then((resp) => {
+                Swal.fire({
+                    title: 'Enviado',
+                    text: 'Usuario creado correctamente',
+                    icon: 'success',
+                    showClass: {
+                        popup: 'animate_animated animate_fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate_animated animate_fadeOutUp'
+                    },
+                    timer: 3000
+                })
+                
+                return resp;
             })
-            return err
-        })
-    console.log(resp);
-    return resp
+            .catch((err) => {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Ingrese todos los datos correctamente',
+                    icon: 'error',
+                    showClass: {
+                        popup: 'animate_animated animate_fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate_animated animate_fadeOutUp'
+                    },
+                    timer: 4000
+                })
+                return err
+            })
+            
+            return resp
+    }else{
+        console.log("no se encontro en la db")
+    }
 }
