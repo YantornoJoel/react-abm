@@ -100,7 +100,7 @@ const GetEquality = async()=>{
     let dataUser =  findUser.data
     console.log(dataUser)
     for (let index = 0; index <= dataUser.length; index++) {
-        let nameUserDb = dataUser[index].nombre;
+        let nameUserDb = dataUser[index];
         return nameUserDb
     }
 }
@@ -108,9 +108,12 @@ const GetEquality = async()=>{
 export const login = async (name) => {
 
     const result = await GetEquality();
-    if(result === name){
+    console.log(result)
+    if(result.nombre === name){
         const resp = await axios.post(`${url}login`, {
-            nombre: name
+            nombre: result.nombre,
+            id: result.id
+            
         })
             .then((resp) => {
                 Swal.fire({
