@@ -1,5 +1,6 @@
 .page-section {
     padding: 6rem 0;
+    background: linear-gradient(-160deg, crimson 0, crimson 85%, white 0, white 85%);
 }
 
 .page-section h2.section-heading,
